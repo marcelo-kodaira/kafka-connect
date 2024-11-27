@@ -1,0 +1,15 @@
+{
+    "name": "mongo-source",
+    "config": {
+      "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
+      "mongodb.hosts": "rs0/mongodb:27017",
+      "mongodb.name": "mongo-source",
+      "database.include.list": "mydatabase",
+      "collection.include.list": "mydatabase.mycollection",
+      "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "transforms": "unwrap",
+      "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
+    }
+  }
+  
